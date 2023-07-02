@@ -1,0 +1,30 @@
+body {
+    background-color: #ffb8bf;
+    background-image: url('https://pngtree.com/freepng/cute-baby-elephant-illustration_7003169.html');
+
+}
+
+
+.countdown-timer {
+    font-family: "Daydream", cursive;
+    font-size: 48px;
+    color: rgb(255, 254, 254);
+    text-align: center;
+    margin-top: 100px;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.label {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fc6c85;
+    text-align: center;
+    margin-top: 30px;
+}

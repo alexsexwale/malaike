@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    background-color: #ffb8bf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.image-container {
+    background-image: url('https://png.pngtree.com/png-clipart/20220102/original/pngtree-cute-baby-elephant-illustration-png-image_7003169.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 500px;
+    width: 30%;
+    margin-top: 50px;
+}
+
+
+        .countdown-timer {
+            font-family: "Daydream", cursive;
+            font-size: 48px;
+            color: rgb(255, 254, 254);
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #days,
+        #hours,
+        #minutes,
+        #seconds {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .label {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #fc6c85;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown-timer">
+        <span id="days" class="animated"></span>
+        <span class="label">DAYS</span>
+        <span id="hours" class="animated"></span>
+        <span class="label">HOURS</span>
+        <span id="minutes" class="animated"></span>
+        <span class="label">MINS</span>
+        <span id="seconds" class="animated"></span>
+        <span class="label">SECS</span>
+    </div>
+
+    <div class="label">
+        UNTIL MALAIKE SEXWALE IS BORN
+    </div>
+
+    <div class="image-container"></div>
+
+    <script>
+        // Set the countdown target date to October 9, 2023
+        var targetDate = new Date("October 9, 2023").getTime();
+
+        // Update the countdown every second
+        var countdown = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = targetDate - now;
+
+            // Calculate the remaining days, hours, minutes, and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the remaining time in the respective elements
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            // If the countdown is finished, display "EXPIRED"
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("days").textContent = "0";
+                document.getElementById("hours").textContent = "0";
+                document.getElementById("minutes").textContent = "0";
+                document.getElementById("seconds").textContent = "0";
+            }
+            
+            // Add animation class to animate the countdown timer
+            document.querySelector(".countdown-timer").classList.add("show");
+        }, 1000);
+    </script>
+</body>
+</html>
