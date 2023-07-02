@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
+       body {
     background-color: #ffb8bf;
     display: flex;
     flex-direction: column;
@@ -27,30 +27,51 @@
     margin-top: 50px;
 }
 
+.countdown-timer {
+    font-family: "Daydream", cursive;
+    font-size: 48px;
+    color: rgb(255, 254, 254);
+    text-align: center;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-        .countdown-timer {
-            font-family: "Daydream", cursive;
-            font-size: 48px;
-            color: rgb(255, 254, 254);
-            text-align: center;
-            margin-top: 100px;
-        }
+#days,
+#hours,
+#minutes,
+#seconds {
+    display: inline-block;
+    margin: 0 10px;
+}
 
-        #days,
-        #hours,
-        #minutes,
-        #seconds {
-            display: inline-block;
-            margin: 0 10px;
-        }
+.label {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fc6c85;
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}
 
-        .label {
-            font-size: 24px;
-            text-transform: uppercase;
-            color: #fc6c85;
-            text-align: center;
-            margin-top: 30px;
-        }
+/* Styles for screens with a maximum width of 600px (or less) */
+@media (max-width: 600px) {
+    .image-container {
+        width: 100%;
+    }
+
+    #days,
+    #hours {
+        width: 50%;
+    }
+
+    #minutes,
+    #seconds {
+        width: 50%;
+    }
+}
+
     </style>
 </head>
 <body>
